@@ -1,137 +1,182 @@
-body{
+* {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-}
-
-header{
-  position: fixed;
-  background: #22242A;
-  padding: 20px;
-  width: 100%;
-  height: 30px;
-}
-
-.left_area h3{
-  color: #fff;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-weight: 900;
-}
-
-.left_area span{
-  color: #19B3D3;
-}
-
-.logout_btn{
-  padding: 5px;
-  background: #19B3D3;
-  text-decoration: none;
-  float: right;
-  margin-top: -30px;
-  margin-right: 40px;
-  border-radius: 2px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  transition: 0.5s;
-  transition-property: background;
-}
-
-.logout_btn:hover{
-  background: #0B87A6;
-}
-
-.sidebar {
-  background: #2f323a;
-  margin-top: 70px;
-  padding-top: 30px;
-  position: fixed;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  transition: 0.5s;
-  transition-property: left;
-}
-
-.sidebar .profile_image{
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  margin-bottom: 10px;
-}
-
-.sidebar h4{
-  color: #ccc;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.sidebar a{
-  color: #fff;
-  display: block;
-  width: 100%;
-  line-height: 60px;
-  text-decoration: none;
-  padding-left: 40px;
+  font-family: consolas;
   box-sizing: border-box;
-  transition: 0.5s;
-  transition-property: background;
 }
-
-.sidebar a:hover{
-  background: #19B3D3;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #050801;
 }
-
-.sidebar i{
-  padding-right: 10px;
+#box {
+  width: 800px;
+	margin: 0px auto;
+	text-align: center;
+	position: relative;
 }
-
-label #sidebar_btn{
-  z-index: 1;
-  color: #fff;
-  position: fixed;
-  cursor: pointer;
-  left: 300px;
-  font-size: 20px;
-  margin: 5px 0;
-  transition: 0.5s;
-  transition-property: color;
+.checkBox {
+  width: 800px;
+	text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
-
-label #sidebar_btn:hover{
-  color: #19B3D3;
-}
-
-#check:checked ~ .sidebar{
-  left: -190px;
-}
-
-#check:checked ~ .sidebar a span{
-  display: none;
-}
-
-#check:checked ~ .sidebar a{
-  font-size: 20px;
-  margin-left: 170px;
-  width: 80px;
-}
-
-.content{
-  margin-left: 250px;
-  background: url(https://indainam.com/wp-content/uploads/2017/10/mau-background-don-gian-02-1024x768.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  transition: 0.5s;
-}
-
-#check:checked ~ .content{
-  margin-left: 60px;
-}
-
-#check{
-  display: none;
-}
+.toggle {
+  display: inline-block;
+  position: relative;
+  width: 6em;
+  height: 3rem;
   
+}
+.fs-subtitle {
+  display: inline-block;
+	font-weight: normal;
+	font-size: 20px;
+	color: #fff;
+/* 	margin-bottom: 20px; */
+}
+.toggle input[type="checkbox"] {
+  display: none;
+}
+.slider {
+  position: relative;
+  width: 50%;
+  height: 50%;
+ border-radius: 99rem;
+ background-color: #ccc;
+ transition: .4s;
+  cursor: pointer;
+}
+
+.slider:before  {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 99rem;
+  background-color: #fff;
+  transition: .4s;
+}
+ .toggle input[type="checkbox"]:checked + .slider {
+  background-color: #07a787;
+}
+
+.toggle input[type="checkbox"]:checked + .slider:before  {
+  transform: translateX(24px);
+} 
+
+#tx, #show {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 16px;
+  height: 10rem;
+   font-family: airal;
+}
+a {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  filter: hue-rotate(110deg);
+  color: #fff;
+}
+a:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 250px #03e9f4;
+}
+a span {
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1) {
+  top: 0;
+  left: -100;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: ani1 1s linear infinite;
+}
+@keyframes ani1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: ani2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes ani2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: ani3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes ani3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: ani4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes ani4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
